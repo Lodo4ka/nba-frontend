@@ -10,8 +10,7 @@ const SideNavigation = props => (
       navStyle={{
         background: '#242424',
         maxWidth: '220px',
-      }}
-    >
+      }}>
       <SideNavItems />
     </SideNav>
   </div>

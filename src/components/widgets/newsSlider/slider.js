@@ -1,35 +1,21 @@
-import React, { Component } from "react";
-import axios from "axios";
+import React, { Component } from 'react';
+import axios from 'axios';
+import SliderTemplate from './sliderTemplate';
 
-import SliderTemplates from "./slider_templates";
-import { URL } from "../../config.js";
-
-class NewsSlider extends Component {
+export default class NewsSlider extends Component {
   state = {
-    news: []
+    news: [],
   };
 
   componentWillMount() {
     axios
-      .get(
-        `${URL}/articles?_start=${this.props.start}&_end=${this.props.amount}`
-      )
+      .get('http://localhost:3004/articles? start=0&_end=3')
       .then(response => {
-        this.setState({
-          news: response.data
-        });
+        console.log(response);
       });
   }
 
   render() {
-    return (
-      <SliderTemplates
-        data={this.state.news}
-        type={this.props.type}
-        settings={this.props.settings}
-      />
-    );
+    return <SliderTemplate data={this.state.news} type="featured" />;
   }
 }
-
-export default NewsSlider;
