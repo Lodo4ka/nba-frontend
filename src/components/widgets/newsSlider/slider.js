@@ -1,21 +1,41 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import SliderTemplate from './sliderTemplate';
+import { firebaseArticles, firebaseLooper } from "../../../firebase";
 
-export default class NewsSlider extends Component {
-  state = {
-    news: [],
-  };
+import SliderTemplates from './slider_templates';
 
-  componentWillMount() {
-    axios
-      .get('http://localhost:3004/articles? start=0&_end=3')
-      .then(response => {
-        console.log(response);
-      });
-  }
+class NewsSlider extends Component {
 
-  render() {
-    return <SliderTemplate data={this.state.news} type="featured" />;
-  }
+    state = {
+        news: []
+    }
+
+    componentWillMount() {
+
+        firebaseArticles.limitToFirst(3).once("value")
+            .then(snapshot => {
+                const news = firebaseLooper(snapshot);
+                this.setState({
+                    news
+                })
+            })
+            // axios.get(`${URL}/articles?_start=${this.props.start}&_end=${this.props.amount}`)
+            //     .then(response => {
+            //         this.setState({
+            //             news: response.data
+            //         })
+            //     })
+    }
+
+    render() {
+        console.log(this.state)
+        return ( <
+            SliderTemplates data = { this.state.news }
+            type = { this.props.type }
+            settings = { this.props.settings }
+            />
+        )
+    }
+
 }
+
+export default NewsSlider;

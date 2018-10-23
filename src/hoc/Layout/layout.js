@@ -1,29 +1,35 @@
-import Header from "./../../components/Header/header";
-import React, { Component } from "react";
-import Footer from "../../components/Footer/footer";
+import React, { Component } from 'react';
+import './layout.css'
 
-export default class Layout extends Component {
-  state = {
-    showNav: false
-  };
+import Header from '../../components/Header/header';
+import Footer from '../../components/Footer/footer';
 
-  toggleSidenav = action => {
-    this.setState({
-      showNav: action
-    });
-  };
+class Layout extends Component {
 
-  render() {
-    return (
-      <div>
-        <Header
-          showNav={this.state.showNav}
-          onHideNav={() => this.toggleSidenav(false)}
-          onOpenNav={() => this.toggleSidenav(true)}
-        />
-        {this.props.children}
-        <Footer />
-      </div>
-    );
-  }
+    state = {
+      showNav:false  
+    }
+
+    toggleSidenav = (action) =>{
+        this.setState({
+            showNav:action
+        })
+    }
+ 
+    render(){
+        return(
+            <div>
+                <Header
+                    showNav={this.state.showNav}
+                    onHideNav={() => this.toggleSidenav(false)}
+                    onOpenNav={() => this.toggleSidenav(true)}
+                />
+                {this.props.children}
+                <Footer/>
+            </div>
+        )
+    }
+
 }
+
+export default Layout;
