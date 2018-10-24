@@ -1,6 +1,6 @@
 import React from 'react';
 
-import NewsSlider from '../../../widgets/NewsSlider/slider';
+import NewsSlider from '../../../widgets/newsSlider/slider';
 import NewsList from '../../../widgets/NewsList/newsList';
 
 const NewsMain = () => (
