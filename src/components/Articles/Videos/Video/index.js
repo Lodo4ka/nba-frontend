@@ -11,12 +11,16 @@ import Header from './header';
 import VideosRelated from '../../../widgets/VideosList/VideosRelated/videosRelated';
 
 class VideoArticle extends Component {
-  state = {
-    article: [],
-    team: [],
-    teams: [],
-    related: [],
-  };
+  constructor() {
+    super();
+    this.state = {
+      article: [],
+      team: [],
+      teams: [],
+      related: [],
+    };
+  }
+
 
   componentWillMount() {
     firebaseDB

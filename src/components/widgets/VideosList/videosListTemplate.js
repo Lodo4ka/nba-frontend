@@ -1,8 +1,8 @@
-import React from 'react';
-import styles from './videosList.css';
+import React from "react";
+import styles from "./videosList.css";
 
-import { Link } from 'react-router-dom';
-import CardInfo from '../CardInfo/cardInfo';
+import { Link } from "react-router-dom";
+import CardInfo from "../CardInfo/cardInfo";
 
 const VideosListTemplate = (props) => {
     return props.data.map( (item,i) => (
@@ -21,7 +21,7 @@ const VideosListTemplate = (props) => {
                 </div>
             </div>
         </Link>
-    ))
-}
+    ));
+};
 
 export default VideosListTemplate;

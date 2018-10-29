@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
-import NewsSlider from '../../../widgets/newsSlider/slider';
-import NewsList from '../../../widgets/NewsList/newsList';
+import NewsSlider from "../../../widgets/newsSlider/slider";
+import NewsList from "../../../widgets/NewsList/newsList";
 
 const NewsMain = () => (
     <div>
@@ -18,6 +18,6 @@ const NewsMain = () => (
             amount={3}
         />
     </div>
-)
+);
 
 export default NewsMain;

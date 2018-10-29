@@ -1,13 +1,15 @@
-import React from 'react';
-import styles from '../articles.css';
+import React from "react";
+import styles from "../articles.css";
 
 
 const teamNfo = (props) => (
     <div className={styles.articleTeamHeader}>
         <div className={styles.left}
-            style={{
-                background:`url('/images/teams/${props.team.logo}')`
-            }}
+            style = {
+                {
+                    background: `url('/images/teams/${props.team.logo}')`
+                }
+            }
         >
         </div>
         <div className={styles.right}>
@@ -21,7 +23,7 @@ const teamNfo = (props) => (
             </div>
         </div>
     </div>
-)
+);
 
 export default teamNfo;
 

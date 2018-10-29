@@ -9,12 +9,14 @@ import VideosListTemplate from './videosListTemplate'
 class VideosList extends Component {
 
         state = {
-            teams:[],
-            videos:[],
-            start: this.props.start,
-            end: this.props.start + this.props.amount,
-            amount: this.props.amount
+          teams: [],
+          videos: [],
+          start: this.props.start,
+          end: this.props.start + this.props.amount,
+          amount: this.props.amount
         }
+
+
 
         componentWillMount(){
             this.request(this.state.start, this.state.end)

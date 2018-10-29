@@ -1,22 +1,22 @@
-import React from 'react';
-import styles from '../articles.css';
-import moment from 'moment';
+import React from "react";
+import styles from "../articles.css";
+import moment from "moment";
 
 const formatDate = date => {
-  return moment(date).format('DD:MM:YYYY');
+    return moment(date).format("DD:MM:YYYY");
 };
 
 const postData = props => (
-  <div className={styles.articlePostData}>
-    <div>
+    <div className={styles.articlePostData}>
+        <div>
       Date:
-      <span> {formatDate(props.data.date)} </span>
-    </div>
-    <div>
+            <span> {formatDate(props.data.date)} </span>
+        </div>
+        <div>
       Author:
-      <span>{props.data.author}</span>
+            <span>{props.data.author}</span>
+        </div>
     </div>
-  </div>
 );
 
 export default postData;

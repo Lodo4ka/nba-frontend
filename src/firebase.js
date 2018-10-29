@@ -1,4 +1,4 @@
-import * as firebase from 'firebase'
+import * as firebase from "firebase";
 
 var config = {
     apiKey: "AIzaSyDR3p46fmDVxjbP1ayXbGeTLM-qHBStRpQ",
@@ -12,9 +12,9 @@ var config = {
 firebase.initializeApp(config);
 
 const firebaseDB = firebase.database();
-const firebaseArticles = firebaseDB.ref('articles');
-const firebaseTeams = firebaseDB.ref('teams');
-const firebaseVideos = firebaseDB.ref('videos');
+const firebaseArticles = firebaseDB.ref("articles");
+const firebaseTeams = firebaseDB.ref("teams");
+const firebaseVideos = firebaseDB.ref("videos");
 
 const firebaseLooper = (snapshot) => {
     const data = [];
@@ -22,10 +22,10 @@ const firebaseLooper = (snapshot) => {
         data.push({
             ...childSnapshot.val(),
             id: childSnapshot.key
-        })
+        });
     });
     return data;
-}
+};
 
 export {
     firebase,
@@ -34,4 +34,4 @@ export {
     firebaseVideos,
     firebaseTeams,
     firebaseLooper
-}
+};
